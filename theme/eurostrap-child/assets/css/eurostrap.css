@@ -45,6 +45,7 @@ body.es-site [class*="es-"] .elementor-heading-title a { color: inherit; }
 body.es-site [class*="es-"].elementor-widget-text-editor { font-family: var(--es-roboto); color: inherit; }
 body.es-site [class*="es-"].elementor-widget-text-editor p { margin: 0; }
 body.es-site [class*="es-"].elementor-widget-image img { display: block; }
+body.es-site .e-con[class*="es-"] > .elementor-widget { --kit-widget-spacing: 0px; margin-block-end: 0; }
 body.es-site .elementor-widget.es-reveal,
 body.es-site .e-con.es-reveal { will-change: opacity, transform; }
 body.es-site .e-con[class*="es-"] { --container-widget-width: auto; --width: auto; --flex-wrap: nowrap; }
@@ -91,15 +92,16 @@ body.es-site .es-specs strong { font-weight: 600; text-align: right; color: var(
 /* ---------------------------------------------------------------- buttons
    Elementor Button widget + class es-btn. The angled outline strokes are
    injected by eurostrap.js (decoration only). */
-body.es-site .elementor-widget.es-btn { width: fit-content; max-width: 100%; flex: none; --es-stroke: #141414; --es-glow: rgba(217, 48, 44, .32); }
-body.es-site .es-btn .elementor-button-wrapper {
-	position: relative; display: inline-flex; width: fit-content;
+body.es-site .elementor-widget.es-btn {
+	position: relative; display: inline-flex; width: fit-content; max-width: 100%; flex: none;
+	--es-stroke: #141414; --es-glow: rgba(217, 48, 44, .32);
 	filter: drop-shadow(0 6px 14px var(--es-glow));
 	transition: transform .3s var(--es-ease), filter .3s ease;
 }
-body.es-site .es-btn .elementor-button-wrapper:hover { transform: translateY(-2px); filter: drop-shadow(0 12px 22px var(--es-glow)); }
+body.es-site .elementor-widget.es-btn:hover { transform: translateY(-2px); filter: drop-shadow(0 12px 22px var(--es-glow)); }
+body.es-site .es-btn .elementor-button-wrapper { display: contents; }
 body.es-site .es-btn .elementor-button {
-	position: relative; display: flex; align-items: center; gap: 8px;
+	position: relative; z-index: 1; display: flex; align-items: center; gap: 8px;
 	background: var(--es-red); color: #FFFFFF; border: 0; border-radius: 0;
 	padding: 14px 34px; font-family: var(--es-roboto); font-size: 14px; font-weight: 500; line-height: normal; letter-spacing: 0; white-space: nowrap;
 	clip-path: polygon(0 50%, 14px 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 14px 100%);

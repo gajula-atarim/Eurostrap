@@ -36,7 +36,8 @@
 		return s;
 	}
 	function decorateButtons(ctx) {
-		$$('.es-btn .elementor-button-wrapper', ctx).forEach(function (w) {
+		$$('.elementor-widget.es-btn', ctx).forEach(function (btn) {
+			var w = btn.querySelector('.elementor-button-wrapper') || btn;
 			if (w.querySelector('.es-btn__line')) return;
 			w.insertBefore(strokeSvg('b'), w.firstChild);
 			w.insertBefore(strokeSvg('a'), w.firstChild);

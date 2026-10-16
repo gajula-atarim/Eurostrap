@@ -131,8 +131,8 @@ def render(e):
             img = f'<a href="{s["link"]["url"]}">{img}</a>'
         body = img
     elif w == 'button':
-        body = (f'<div class="elementor-button-wrapper"><a class="elementor-button elementor-button-link elementor-size-sm" href="{s["link"]["url"]}">'
-                f'<span class="elementor-button-content-wrapper"><span class="elementor-button-text">{s["text"]}</span></span></a></div>')
+        body = (f'<a class="elementor-button elementor-button-link elementor-size-sm" href="{s["link"]["url"]}">'
+                f'<span class="elementor-button-content-wrapper"><span class="elementor-button-text">{s["text"]}</span></span></a>')
     elif w == 'shortcode':
         body = f'<div class="elementor-shortcode">{cf7(s["shortcode"])}</div>'
     elif w == 'google_maps':
@@ -145,6 +145,8 @@ def render(e):
         body = posts_html(s['posts_per_page'])
     elif w == 'copyright':
         body = f'<div class="hfe-copyright-wrapper"><span>{s["shortcode"].replace("[hfe_current_year]", "2026")}</span></div>'
+    if w in ('site-logo', 'navigation-menu', 'hfe-basic-posts', 'copyright'):
+        body = f'<div class="elementor-widget-container">{body}</div>'
     return f'<div class="elementor-element elementor-widget elementor-widget-{w} {cls}">{body}</div>'
 
 

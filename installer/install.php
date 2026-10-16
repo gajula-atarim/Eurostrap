@@ -34,6 +34,7 @@ $es_get = function ( $path ) {
 };
 
 $manifest = json_decode( $es_get( 'build/out/manifest.json' ), true );
+update_option( 'es_install_log', [ 'time' => current_time( 'mysql' ), 'stages' => $es_stages, 'log' => 'started' ], false );
 
 /* ------------------------------------------------------------------ plugins */
 if ( $es_run( 'plugins' ) ) {
@@ -45,9 +46,16 @@ if ( $es_run( 'plugins' ) ) {
 		'contact-form-7'          => 'contact-form-7/wp-contact-form-7.php',
 	] as $slug => $file ) {
 		if ( ! file_exists( WP_PLUGIN_DIR . '/' . $file ) ) {
-			$api = plugins_api( 'plugin_information', [ 'slug' => $slug, 'fields' => [ 'sections' => false ] ] );
-			$up  = new Plugin_Upgrader( $skin );
-			$es_log['plugins'][ $slug ] = $up->install( $api->download_link );
+			$api  = plugins_api( 'plugin_information', [ 'slug' => $slug, 'fields' => [ 'sections' => false ] ] );
+			$link = ( ! is_wp_error( $api ) && ! empty( $api->download_link ) ) ? $api->download_link : 'https://downloads.wordpress.org/plugin/' . $slug . '.latest-stable.zip';
+			$up   = new Plugin_Upgrader( $skin );
+			$res  = $up->install( $link );
+			if ( true !== $res ) {
+				$res = ( new Plugin_Upgrader( $skin ) )->install( 'https://downloads.wordpress.org/plugin/' . $slug . '.latest-stable.zip' );
+			}
+			$es_log['plugins'][ $slug ] = is_wp_error( $res ) ? $res->get_error_message() : $res;
+			$es_log['plugins'][ $slug . '_skin' ] = $skin->get_upgrade_messages();
+			wp_clean_plugins_cache( true );
 		}
 		$res = activate_plugin( $file );
 		$es_log['plugins'][ $slug . '_active' ] = is_wp_error( $res ) ? $res->get_error_message() : is_plugin_active( $file );
@@ -368,11 +376,12 @@ if ( $es_run( 'posts' ) ) {
 			'post_excerpt'  => $a['excerpt'],
 			'post_content'  => $blocks,
 			'post_category' => [ (int) $term['term_id'] ],
-			'post_date'     => gmdate( 'Y-m-d H:i:s', time() - ( 3 - $i ) * 9 * DAY_IN_SECONDS ),
+			'post_date'     => wp_date( 'Y-m-d H:i:s', time() - ( $i * 9 + 1 ) * DAY_IN_SECONDS ),
 		];
 		if ( $existing ) {
-			$args['ID'] = $existing->ID;
-			unset( $args['post_date'] );
+			$args['ID']            = $existing->ID;
+			$args['post_date_gmt'] = get_gmt_from_date( $args['post_date'] );
+			$args['edit_date']     = true;
 			$pid = wp_update_post( $args );
 		} else {
 			$pid = wp_insert_post( $args );
@@ -417,4 +426,5 @@ if ( $es_run( 'flush' ) ) {
 	$es_log['flush'] = 'ok';
 }
 
+update_option( 'es_install_log', [ 'time' => current_time( 'mysql' ), 'stages' => $es_stages, 'log' => $es_log ], false );
 return $es_log;
