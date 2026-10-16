@@ -873,9 +873,12 @@ body.elementor-editor-active.elementor-page .es-hero { min-height: 640px; }
 	body.es-site .es-trust__lead { margin-top: 26px; }
 	body.es-site .es-trust__lead .elementor-heading-title { font-size: 24px; }
 	body.es-site .es-trust__media { aspect-ratio: 4 / 3; border-radius: 16px; }
-	body.es-site .es-stats { grid-template-columns: 1fr; gap: 0; }
-	/* Mobile: number and label side by side, numbers in a fixed column so labels align */
-	body.es-site .es-stat { flex-direction: row; align-items: center; justify-content: center; gap: 16px; padding: 16px 4px; text-align: left; }
+	body.es-site .es-stats { grid-template-columns: 1fr; gap: 0; width: fit-content; max-width: 100%; }
+	/* Mobile: number and label side by side. Numbers sit in a fixed column with digits
+	   right-aligned (7 lines up with the 0 of 20); the "+" hangs into the gap. */
+	body.es-site .es-stat { flex-direction: row; align-items: center; justify-content: flex-start; gap: 16px; padding: 16px 4px; text-align: left; }
+	body.es-site .es-stat__v .elementor-heading-title { position: relative; display: block; width: 2ch; margin-right: .55em; text-align: right; }
+	body.es-site .es-stat__v .elementor-heading-title span { position: absolute; left: 100%; top: 0; }
 	body.es-site .es-stat::after { display: none; }
 	body.es-site .es-stat::before { left: 50%; width: 56px; margin-left: -28px; transform-origin: center; }
 	body.es-site .es-stat.es-revealed::before { transform: scaleX(1); }
