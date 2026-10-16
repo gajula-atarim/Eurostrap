@@ -1,0 +1,319 @@
+{
+ "docs": [
+  {
+   "key": "home",
+   "type": "page",
+   "title": "Home",
+   "slug": "home",
+   "file": "home.json"
+  },
+  {
+   "key": "about",
+   "type": "page",
+   "title": "About",
+   "slug": "about",
+   "file": "about.json"
+  },
+  {
+   "key": "machines",
+   "type": "page",
+   "title": "Machines",
+   "slug": "machines",
+   "file": "machines.json"
+  },
+  {
+   "key": "articles",
+   "type": "page",
+   "title": "Articles",
+   "slug": "articles",
+   "file": "articles.json"
+  },
+  {
+   "key": "contact",
+   "type": "page",
+   "title": "Contact",
+   "slug": "contact",
+   "file": "contact.json"
+  },
+  {
+   "key": "cat-wrapping-machines",
+   "type": "page",
+   "title": "Wrapping Machines",
+   "slug": "wrapping-machines",
+   "parent": "machines",
+   "file": "cat-wrapping-machines.json"
+  },
+  {
+   "key": "cat-bag-filling",
+   "type": "page",
+   "title": "Bag Filling",
+   "slug": "bag-filling",
+   "parent": "machines",
+   "file": "cat-bag-filling.json"
+  },
+  {
+   "key": "cat-palletisers",
+   "type": "page",
+   "title": "Palletisers",
+   "slug": "palletisers",
+   "parent": "machines",
+   "file": "cat-palletisers.json"
+  },
+  {
+   "key": "cat-robotic-palletisers",
+   "type": "page",
+   "title": "Robotic Palletisers",
+   "slug": "robotic-palletisers",
+   "parent": "machines",
+   "file": "cat-robotic-palletisers.json"
+  },
+  {
+   "key": "cat-strapping",
+   "type": "page",
+   "title": "Strapping",
+   "slug": "strapping",
+   "parent": "machines",
+   "file": "cat-strapping.json"
+  },
+  {
+   "key": "cat-carton-sealing",
+   "type": "page",
+   "title": "Carton Sealing",
+   "slug": "carton-sealing",
+   "parent": "machines",
+   "file": "cat-carton-sealing.json"
+  },
+  {
+   "key": "cat-shrink-stretch-hooding",
+   "type": "page",
+   "title": "Shrink/Stretch Hooding",
+   "slug": "shrink-stretch-hooding",
+   "parent": "machines",
+   "file": "cat-shrink-stretch-hooding.json"
+  },
+  {
+   "key": "cat-case-packing",
+   "type": "page",
+   "title": "Case Packing",
+   "slug": "case-packing",
+   "parent": "machines",
+   "file": "cat-case-packing.json"
+  },
+  {
+   "key": "cat-consumables",
+   "type": "page",
+   "title": "Consumables",
+   "slug": "consumables",
+   "parent": "machines",
+   "file": "cat-consumables.json"
+  },
+  {
+   "key": "cat-consultation-and-design",
+   "type": "page",
+   "title": "Consultation & Design",
+   "slug": "consultation-and-design",
+   "parent": "machines",
+   "file": "cat-consultation-and-design.json"
+  },
+  {
+   "key": "header",
+   "type": "header",
+   "title": "Eurostrap Header",
+   "file": "header.json"
+  },
+  {
+   "key": "footer",
+   "type": "footer",
+   "title": "Eurostrap Footer",
+   "file": "footer.json"
+  }
+ ],
+ "articles": [
+  {
+   "slug": "choosing-a-semi-automatic-stretch-wrapper",
+   "title": "Turntable or robot: choosing a semi-automatic stretch wrapper",
+   "cat": "Buying guide",
+   "img": "pexels-art-1",
+   "excerpt": "A turntable suits stable pallets at a fixed station. A self-propelled robot wraps loads wherever they sit. Here is how to choose.",
+   "body": [
+    [
+     "p",
+     "Semi-automatic stretch wrappers cover most low to medium volume dispatch floors. The operator brings the pallet to the machine (or the machine to the pallet), attaches the film and starts the cycle. The two main formats are the rotating turntable and the self-propelled robot, such as the Atlanta Sfera."
+    ],
+    [
+     "h2",
+     "When a turntable makes sense"
+    ],
+    [
+     "p",
+     "A turntable wrapper rotates the pallet on a platform while the film carriage travels up and down the mast. It suits stable, regular loads that can be placed with a forklift or pallet jack at a fixed station. Turntables give consistent wraps, low film use with powered pre-stretch, and a small footprint next to the dispatch dock."
+    ],
+    [
+     "h2",
+     "When a robot is the better fit"
+    ],
+    [
+     "p",
+     "A self-propelled robot drives around the load instead of spinning it. That makes it the right choice for heavy, tall or unstable pallets, for oversized loads, and for sites where pallets are wrapped in different places across the warehouse. The Atlanta Sfera wraps palletised loads of almost any shape, weight and dimension in under a minute."
+    ],
+    [
+     "h2",
+     "Questions to ask before you buy"
+    ],
+    [
+     "ul",
+     [
+      "How many pallets do you wrap per shift, and is that growing?",
+      "Are your loads stable enough to rotate?",
+      "Do you need to wrap in more than one location?",
+      "What film are you using now, and what does it cost per pallet?"
+     ]
+    ],
+    [
+     "p",
+     "Talk to the Eurostrap team about your loads and output. We will recommend the right Atlanta machine, match the film to it and support it locally."
+    ]
+   ]
+  },
+  {
+   "slug": "pp-vs-pet-strap",
+   "title": "PP vs PET strap: which suits your load?",
+   "cat": "Strapping",
+   "img": "pexels-art-2",
+   "excerpt": "Polypropylene and polyester strap both secure loads, but they behave very differently under tension. Match the strap to the job.",
+   "body": [
+    [
+     "p",
+     "Choosing the right strap keeps loads secure and stops you paying for strength you do not need. Most Messersi strapping systems, including those with the MS300 head, run both polypropylene (PP) and polyester (PET) strap."
+    ],
+    [
+     "h2",
+     "Polypropylene (PP)"
+    ],
+    [
+     "p",
+     "PP strap is light, economical and easy to handle. It suits light to medium loads such as cartons, bundles and palletised boxes that will not settle much in transit. It stretches more than PET, so it is less suited to rigid, heavy loads."
+    ],
+    [
+     "h2",
+     "Polyester (PET)"
+    ],
+    [
+     "p",
+     "PET strap holds tension well over time and recovers after impact. It is the usual replacement for steel strap on bricks, timber, pavers and other heavy, rigid loads, and it is safer to cut and handle than steel."
+    ],
+    [
+     "h2",
+     "Steel strap"
+    ],
+    [
+     "p",
+     "For the heaviest loads and high-temperature applications, steel strap is still the strongest option. Painted and galvanised finishes are available."
+    ],
+    [
+     "p",
+     "Eurostrap supplies PP, PET and steel strap matched to your machine or hand tools. Ask us for a recommendation based on your load and transport conditions."
+    ]
+   ]
+  },
+  {
+   "slug": "when-to-step-up-to-a-robotic-palletiser",
+   "title": "When to step up to a robotic palletiser",
+   "cat": "Automation",
+   "img": "pexels-art-3",
+   "excerpt": "Manual palletising is slow, inconsistent and hard on people. These are the signs it is time for a robot cell.",
+   "body": [
+    [
+     "p",
+     "Robotic palletisers stack cases and bags into consistent, stable pallets with recipe-based changeovers. They are no longer only for the largest plants."
+    ],
+    [
+     "h2",
+     "Signs you are ready"
+    ],
+    [
+     "ul",
+     [
+      "Operators are lifting heavy bags or cases for most of a shift.",
+      "Pallet quality varies between shifts and causes load failures in transit.",
+      "You run several SKUs or lines into one palletising area.",
+      "Labour availability is limiting output."
+     ]
+    ],
+    [
+     "h2",
+     "What a robot cell involves"
+    ],
+    [
+     "p",
+     "A typical cell includes the robot, a gripper matched to your product (fork, clamp or vacuum), infeed conveyors, pallet dispensing and safety guarding. Patterns are stored as recipes, so changeovers take minutes."
+    ],
+    [
+     "h2",
+     "Plan the whole end-of-line"
+    ],
+    [
+     "p",
+     "The best results come from designing palletising, wrapping and strapping together. Eurostrap can assess your line, design the layout and integrate the full system with local support."
+    ]
+   ]
+  }
+ ],
+ "categories": [
+  {
+   "name": "Wrapping Machines",
+   "slug": "wrapping-machines",
+   "items": [
+    "automatic-in-line",
+    "semi-automatic",
+    "self-propelled",
+    "horizontal"
+   ]
+  },
+  {
+   "name": "Bag Filling",
+   "slug": "bag-filling",
+   "items": []
+  },
+  {
+   "name": "Palletisers",
+   "slug": "palletisers",
+   "items": []
+  },
+  {
+   "name": "Robotic Palletisers",
+   "slug": "robotic-palletisers",
+   "items": []
+  },
+  {
+   "name": "Strapping",
+   "slug": "strapping",
+   "items": []
+  },
+  {
+   "name": "Carton Sealing",
+   "slug": "carton-sealing",
+   "items": []
+  },
+  {
+   "name": "Shrink/Stretch Hooding",
+   "slug": "shrink-stretch-hooding",
+   "items": []
+  },
+  {
+   "name": "Case Packing",
+   "slug": "case-packing",
+   "items": []
+  },
+  {
+   "name": "Consumables",
+   "slug": "consumables",
+   "items": []
+  },
+  {
+   "name": "Consultation & Design",
+   "slug": "consultation-and-design",
+   "items": []
+  }
+ ]
+}

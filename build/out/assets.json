@@ -1,0 +1,230 @@
+{
+ "cta-machines": {
+  "filename": "eurostrap-cta-machines.webp",
+  "alt": "Automatic pallet wrapping line and pallet strapping machine",
+  "sources": [
+   "assets/cta-machines.webp"
+  ]
+ },
+ "ec301-robot": {
+  "filename": "eurostrap-ec301-robot.webp",
+  "alt": "EC301 robotic palletiser",
+  "sources": [
+   "assets/ec301-robot.webp"
+  ]
+ },
+ "equipment-bag-filling": {
+  "filename": "eurostrap-equipment-bag-filling.webp",
+  "alt": "Bag filling",
+  "sources": [
+   "assets/equipment-bag-filling.webp"
+  ]
+ },
+ "equipment-carton-sealing": {
+  "filename": "eurostrap-equipment-carton-sealing.webp",
+  "alt": "Carton sealing",
+  "sources": [
+   "assets/equipment-carton-sealing.webp"
+  ]
+ },
+ "equipment-case-packing": {
+  "filename": "eurostrap-equipment-case-packing.webp",
+  "alt": "Case packing",
+  "sources": [
+   "assets/equipment-case-packing.webp"
+  ]
+ },
+ "equipment-consultation": {
+  "filename": "eurostrap-equipment-consultation.webp",
+  "alt": "Consultation",
+  "sources": [
+   "assets/equipment-consultation.webp"
+  ]
+ },
+ "equipment-consumables": {
+  "filename": "eurostrap-equipment-consumables.webp",
+  "alt": "Consumables",
+  "sources": [
+   "assets/equipment-consumables.webp"
+  ]
+ },
+ "equipment-hooding": {
+  "filename": "eurostrap-equipment-hooding.webp",
+  "alt": "Hooding",
+  "sources": [
+   "assets/equipment-hooding.webp"
+  ]
+ },
+ "equipment-palletisers": {
+  "filename": "eurostrap-equipment-palletisers.webp",
+  "alt": "Palletisers",
+  "sources": [
+   "assets/equipment-palletisers.webp"
+  ]
+ },
+ "equipment-robotic-palletisers": {
+  "filename": "eurostrap-equipment-robotic-palletisers.webp",
+  "alt": "Robotic palletisers",
+  "sources": [
+   "assets/equipment-robotic-palletisers.webp"
+  ]
+ },
+ "equipment-strapping": {
+  "filename": "eurostrap-equipment-strapping.webp",
+  "alt": "Strapping",
+  "sources": [
+   "assets/equipment-strapping.webp"
+  ]
+ },
+ "equipment-wrapping": {
+  "filename": "eurostrap-equipment-wrapping.webp",
+  "alt": "Wrapping",
+  "sources": [
+   "assets/equipment-wrapping.webp"
+  ]
+ },
+ "eurostrap-logo": {
+  "filename": "eurostrap-eurostrap-logo.png",
+  "alt": "Eurostrap Packaging Systems",
+  "sources": [
+   "assets/eurostrap-logo.png"
+  ]
+ },
+ "hero-wrapper-blueprint": {
+  "filename": "eurostrap-hero-wrapper-blueprint.webp",
+  "alt": "Automatic ring stretch wrapper on a conveyor line",
+  "sources": [
+   "assets/hero-wrapper-blueprint.webp"
+  ]
+ },
+ "photos-bag-filling": {
+  "filename": "eurostrap-photos-bag-filling.webp",
+  "alt": "Bag filling",
+  "sources": [
+   "assets/photos-bag-filling.webp"
+  ]
+ },
+ "photos-carton-sealing": {
+  "filename": "eurostrap-photos-carton-sealing.webp",
+  "alt": "Carton sealing",
+  "sources": [
+   "assets/photos-carton-sealing.webp"
+  ]
+ },
+ "photos-case-packing": {
+  "filename": "eurostrap-photos-case-packing.webp",
+  "alt": "Case packing",
+  "sources": [
+   "assets/photos-case-packing.webp"
+  ]
+ },
+ "photos-robotic-palletising": {
+  "filename": "eurostrap-photos-robotic-palletising.webp",
+  "alt": "Robotic palletising",
+  "sources": [
+   "assets/photos-robotic-palletising.webp"
+  ]
+ },
+ "robot-palletiser": {
+  "filename": "eurostrap-robot-palletiser.webp",
+  "alt": "Robotic palletiser",
+  "sources": [
+   "assets/robot-palletiser.webp"
+  ]
+ },
+ "strapping-warehouse": {
+  "filename": "eurostrap-strapping-warehouse.webp",
+  "alt": "Pallet strapping machine in a warehouse",
+  "sources": [
+   "assets/strapping-warehouse.webp"
+  ]
+ },
+ "suppliers-area": {
+  "filename": "eurostrap-suppliers-area.webp",
+  "alt": "Area",
+  "sources": [
+   "assets/suppliers-area.webp"
+  ]
+ },
+ "suppliers-atlanta": {
+  "filename": "eurostrap-suppliers-atlanta.webp",
+  "alt": "Atlanta",
+  "sources": [
+   "assets/suppliers-atlanta.webp"
+  ]
+ },
+ "suppliers-bagline": {
+  "filename": "eurostrap-suppliers-bagline.webp",
+  "alt": "Bagline",
+  "sources": [
+   "assets/suppliers-bagline.webp"
+  ]
+ },
+ "suppliers-fuji": {
+  "filename": "eurostrap-suppliers-fuji.webp",
+  "alt": "Fuji",
+  "sources": [
+   "assets/suppliers-fuji.webp"
+  ]
+ },
+ "suppliers-pkt": {
+  "filename": "eurostrap-suppliers-pkt.webp",
+  "alt": "Pkt",
+  "sources": [
+   "assets/suppliers-pkt.webp"
+  ]
+ },
+ "suppliers-reisopack": {
+  "filename": "eurostrap-suppliers-reisopack.webp",
+  "alt": "Reisopack",
+  "sources": [
+   "assets/suppliers-reisopack.webp"
+  ]
+ },
+ "warehouse-pallets": {
+  "filename": "eurostrap-warehouse-pallets.webp",
+  "alt": "Wrapped pallets in a warehouse",
+  "sources": [
+   "assets/warehouse-pallets.webp"
+  ]
+ },
+ "wrapping-warehouse": {
+  "filename": "eurostrap-wrapping-warehouse.webp",
+  "alt": "Automatic stretch wrapping machine on a conveyor line",
+  "sources": [
+   "assets/wrapping-warehouse.webp"
+  ]
+ },
+ "pexels-food": {
+  "filename": "eurostrap-pexels-food.jpg",
+  "alt": "Food and beverage packing line",
+  "sources": [
+   "https://images.pexels.com/photos/18631424/pexels-photo-18631424.jpeg?auto=compress&cs=tinysrgb&w=1400",
+   "assets/photos-case-packing.webp"
+  ]
+ },
+ "pexels-art-1": {
+  "filename": "eurostrap-pexels-art-1.jpg",
+  "alt": "Stretch wrapped pallets",
+  "sources": [
+   "https://images.pexels.com/photos/17229385/pexels-photo-17229385.jpeg?auto=compress&cs=tinysrgb&w=1200",
+   "assets/wrapping-warehouse.webp"
+  ]
+ },
+ "pexels-art-2": {
+  "filename": "eurostrap-pexels-art-2.jpg",
+  "alt": "Strapped load",
+  "sources": [
+   "https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=1200",
+   "assets/strapping-warehouse.webp"
+  ]
+ },
+ "pexels-art-3": {
+  "filename": "eurostrap-pexels-art-3.jpg",
+  "alt": "Robotic palletising cell",
+  "sources": [
+   "https://images.pexels.com/photos/18471441/pexels-photo-18471441.jpeg?auto=compress&cs=tinysrgb&w=1200",
+   "assets/photos-robotic-palletising.webp"
+  ]
+ }
+}
