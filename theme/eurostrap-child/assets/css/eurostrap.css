@@ -540,10 +540,10 @@ body.es-site .es-fcontact a { color: #E3E3E3; }
 body.es-site .es-fcontact a:hover { color: #FFFFFF; }
 body.es-site .es-fsub__t .elementor-heading-title { color: #FFFFFF; font-weight: 700; font-size: 16px; line-height: 1.3; }
 body.es-site .es-wordmark { display: flex; flex-direction: row; align-items: center; gap: 24px; border-top: 1px solid #1E1E1E; padding-top: 48px; overflow: hidden; }
-body.es-site .es-wordmark__e { flex: none; width: 150px; }
+body.es-site .es-wordmark__e { flex: none; width: 150px; position: relative; top: -10px; }
 body.es-site .es-wordmark__e .elementor-heading-title {
 	width: 150px; height: 150px; background: var(--es-red); border-radius: 24px; display: flex; align-items: center; justify-content: center;
-	font-family: var(--es-bebas); font-size: 140px; letter-spacing: .01em; color: #FFFFFF; line-height: 1; padding-bottom: 14px;
+	font-family: var(--es-bebas); font-size: 140px; letter-spacing: .01em; color: #FFFFFF; line-height: 1; padding-top: 14px;
 }
 body.es-site .es-wordmark__t .elementor-heading-title { font-family: var(--es-bebas); font-size: 200px; letter-spacing: .01em; line-height: .8; color: #FFFFFF; text-transform: uppercase; white-space: nowrap; }
 body.es-site .es-ftext--partners { color: #8A8A8A; font-size: 13px; }
@@ -815,8 +815,8 @@ body.elementor-editor-active.elementor-page .es-hero { min-height: 640px; }
 	body.es-site .es-fgrid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 28px; }
 	body.es-site .es-fcol--brand, body.es-site .es-fcol--sub { grid-column: 1 / -1; }
 	body.es-site .es-fcol--sub { max-width: 460px; }
-	body.es-site .es-wordmark__e { width: 110px; }
-	body.es-site .es-wordmark__e .elementor-heading-title { width: 110px; height: 110px; font-size: 104px; border-radius: 20px; padding-bottom: 10px; }
+	body.es-site .es-wordmark__e { width: 110px; top: -6px; }
+	body.es-site .es-wordmark__e .elementor-heading-title { width: 110px; height: 110px; font-size: 104px; border-radius: 20px; padding-top: 10px; padding-bottom: 0; }
 	body.es-site .es-wordmark__t .elementor-heading-title { font-size: 140px; }
 
 	body.es-site .es-wrap--split, body.es-site .es-wrap--range, body.es-site .es-wrap--enquire, body.es-site .es-wrap--contact { grid-template-columns: 1fr; gap: 40px; }
@@ -893,8 +893,8 @@ body.elementor-editor-active.elementor-page .es-hero { min-height: 640px; }
 	body.es-site .es-fmeta span { display: block; height: 0; overflow: hidden; }
 	body.es-site .es-related .es-rel { grid-template-columns: 1fr; }
 	body.es-site .es-wordmark { gap: 14px; padding-top: 32px; }
-	body.es-site .es-wordmark__e { width: 64px; }
-	body.es-site .es-wordmark__e .elementor-heading-title { width: 64px; height: 64px; font-size: 60px; border-radius: 12px; padding-bottom: 6px; }
+	body.es-site .es-wordmark__e { width: 64px; top: -4px; }
+	body.es-site .es-wordmark__e .elementor-heading-title { width: 64px; height: 64px; font-size: 60px; border-radius: 12px; padding-top: 6px; padding-bottom: 0; }
 	body.es-site .es-wordmark__t .elementor-heading-title { font-size: calc((100vw - 32px - 78px) / 3.95); }
 
 	body.es-site .es-vgrid, body.es-site .es-pgrid, body.es-site .es-igrid4, body.es-site .es-rel { grid-template-columns: 1fr; }
