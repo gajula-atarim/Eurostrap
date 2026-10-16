@@ -26,7 +26,7 @@ async def main():
         s1=await pg.evaluate("[...document.querySelectorAll('.es-mcard.is-shown .es-mcard__title')].map(e=>e.textContent.trim())")
         on1=await pg.evaluate("document.querySelectorAll('.es-tab.es-tab--on').length")
         dots=await pg.evaluate("[...document.querySelectorAll('.es-dots span')].map(d=>d.className)")
-        await pg.wait_for_timeout(4300)
+        await pg.wait_for_timeout(4800)
         s2=await pg.evaluate("[...document.querySelectorAll('.es-mcard.is-shown .es-mcard__title')].map(e=>e.textContent.trim())")
         check('rotator shows 4 cards',len(s1)==4,str(s1)); check('rotator auto-advances by 4 after 4s',s2!=s1 and len(s2)==4,str(s2))
         check('4 category tabs outlined red',on1==4,str(on1)); check('3 page dots, first active',len(dots)==3 and dots[0]=='is-on',str(dots))
@@ -36,8 +36,13 @@ async def main():
         await pg.click('.es-sq--prev a'); await pg.wait_for_timeout(300)
         s4=await pg.evaluate("[...document.querySelectorAll('.es-mcard.is-shown .es-mcard__title')].map(e=>e.textContent.trim())")
         check('prev arrow goes back',s4==s2,str(s4))
-        # hover pause
-        await pg.hover('.es-mcard.is-shown'); await pg.wait_for_timeout(4500)
+        # hovering the arrows must not stop autoplay
+        await pg.hover('.es-sq--prev a'); await pg.wait_for_timeout(4800)
+        s4b=await pg.evaluate("[...document.querySelectorAll('.es-mcard.is-shown .es-mcard__title')].map(e=>e.textContent.trim())")
+        check('autoplay continues while hovering arrows',s4b!=s4,str(s4b))
+        s4=s4b
+        # hover pause on a card
+        await pg.hover('.es-mcard.is-shown'); await pg.wait_for_timeout(4800)
         s5=await pg.evaluate("[...document.querySelectorAll('.es-mcard.is-shown .es-mcard__title')].map(e=>e.textContent.trim())")
         check('rotator pauses on hover',s5==s4)
         t=await pg.evaluate("document.querySelector('.es-mcard.is-shown').style.transform")
@@ -83,6 +88,10 @@ async def main():
         await rm.goto(URL); await rm.wait_for_timeout(600)
         rr=await rm.evaluate("({m:document.body.classList.contains('es-motion'),h:document.querySelectorAll('.es-hidden').length})")
         check('prefers-reduced-motion disables motion',not rr['m'] and rr['h']==0,str(rr))
+        a1=await rm.evaluate("[...document.querySelectorAll('.es-mcard.is-shown .es-mcard__title')].map(e=>e.textContent.trim())")
+        await rm.wait_for_timeout(4800)
+        a2=await rm.evaluate("[...document.querySelectorAll('.es-mcard.is-shown .es-mcard__title')].map(e=>e.textContent.trim())")
+        check('autoplay still runs with reduced motion',a1!=a2,str(a2))
         await b.close()
     print('PASS',len(ok)); [print('  +',x) for x in ok]
     print('FAIL',len(bad)); [print('  -',x) for x in bad]

@@ -140,35 +140,41 @@
 			for (var i = 0; i < Math.min(pages, 3); i++) { var d = el('span'); dotsWrap.appendChild(d); dots.push(d); }
 		}
 		var tab = 0, hold = false, timer = null;
-		function render(animate) {
+		var AUTOPLAY_MS = 4500;
+		function render(animate, dir) {
 			var visible = [0, 1, 2, 3].map(function (k) { return (tab + k) % N; });
 			cards.forEach(function (c, i) {
 				var on = visible.indexOf(i) !== -1;
 				c.classList.toggle('is-shown', on);
 				c.classList.toggle('is-hidden', !on);
 				c.style.order = on ? String(visible.indexOf(i) + 1) : '';
-				c.classList.remove('es-card-in');
+				c.classList.remove('es-card-in', 'es-card-in--back');
 			});
 			tabs.forEach(function (t, i) { t.classList.toggle('es-tab--on', visible.indexOf(i) !== -1); });
 			var page = Math.floor(tab / 4) % dots.length;
 			dots.forEach(function (d, i) { d.classList.toggle('is-on', i === page); });
 			if (animate && !REDUCE) {
-				var kids = [grid.firstElementChild].concat(visible.map(function (i) { return cards[i]; }));
-				kids.forEach(function (c, i) {
-					if (!c) return;
+				// Cards slide in from the side they are coming from, staggered left to right.
+				visible.map(function (i) { return cards[i]; }).forEach(function (c, i) {
 					void c.offsetWidth;
-					c.style.animationDelay = (i * 60) + 'ms';
-					c.classList.add('es-card-in');
+					c.style.animationDelay = (i * 70) + 'ms';
+					c.classList.add(dir < 0 ? 'es-card-in--back' : 'es-card-in');
 				});
 			}
 		}
 		var intro = $('.es-mgrid__intro', grid), explore = $('.es-mgrid__explore', grid);
 		if (intro) intro.style.order = '0';
 		if (explore) explore.style.order = '9';
-		function go(delta) { tab = ((tab + delta) % N + N) % N; render(true); }
-		function start() { clearInterval(timer); if (!REDUCE) timer = setInterval(function () { if (!hold) go(4); }, 4000); }
-		grid.addEventListener('mouseenter', function () { hold = true; });
-		grid.addEventListener('mouseleave', function () { hold = false; });
+		function go(delta) { tab = ((tab + delta) % N + N) % N; render(true, delta); }
+		// Autoplay always runs (reduced-motion visitors get the swap without the slide);
+		// it only pauses while the pointer is on a machine card.
+		function start() { clearInterval(timer); timer = setInterval(function () { if (!hold && !doc.hidden) go(4); }, AUTOPLAY_MS); }
+		cards.forEach(function (c) {
+			c.addEventListener('mouseenter', function () { hold = true; });
+			c.addEventListener('mouseleave', function () { hold = false; });
+			c.addEventListener('focusin', function () { hold = true; });
+			c.addEventListener('focusout', function () { hold = false; });
+		});
 		var next = $('.es-sq--next a', sec), prev = $('.es-sq--prev a', sec);
 		if (next) next.addEventListener('click', function (e) { e.preventDefault(); go(4); start(); });
 		if (prev) prev.addEventListener('click', function (e) { e.preventDefault(); go(-4); start(); });

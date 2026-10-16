@@ -703,14 +703,16 @@ body.es-site .es-article a { text-decoration: underline; }
 @keyframes es-outlineIn { from { opacity: 0; letter-spacing: .2em; } to { opacity: 1; letter-spacing: 0; } }
 @keyframes es-kenburns { from { transform: scale(1.06); } to { transform: scale(1); } }
 @keyframes es-revealIn { from { opacity: 0; translate: 0 40px; filter: blur(6px); } to { opacity: 1; translate: 0 0; filter: blur(0); } }
-@keyframes es-cardIn { from { opacity: 0; transform: translateY(16px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes es-cardIn { from { opacity: 0; transform: translateX(56px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes es-cardInBack { from { opacity: 0; transform: translateX(-56px) scale(.98); } to { opacity: 1; transform: none; } }
 
 body.es-site.es-motion .es-anim-hero { animation: es-heroIn 1s var(--es-ease) backwards; }
 body.es-site.es-motion .es-hero__outline .elementor-heading-title { animation: es-outlineIn 1.8s var(--es-ease) backwards; }
 body.es-site.es-motion .es-kenburns { animation: es-kenburns 9s ease-out both; }
 body.es-site.es-motion .es-hidden { opacity: 0; }
 body.es-site.es-motion .es-in { animation: es-revealIn .9s var(--es-ease) backwards; }
-body.es-site .es-card-in { animation: es-cardIn .5s var(--es-ease) backwards; }
+body.es-site .es-card-in { animation: es-cardIn .6s var(--es-ease) backwards; }
+body.es-site .es-card-in--back { animation: es-cardInBack .6s var(--es-ease) backwards; }
 
 @media (prefers-reduced-motion: reduce) {
 	html { scroll-behavior: auto; }
