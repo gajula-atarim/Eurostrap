@@ -865,8 +865,12 @@ body.elementor-editor-active.elementor-page .es-hero { min-height: 640px; }
 	body.es-site .es-trust__lead { margin-top: 26px; }
 	body.es-site .es-trust__lead .elementor-heading-title { font-size: 24px; }
 	body.es-site .es-trust__media { aspect-ratio: 4 / 3; border-radius: 16px; }
-	body.es-site .es-stats { grid-template-columns: 1fr; gap: 8px; }
+	body.es-site .es-stats { grid-template-columns: 1fr; gap: 0; }
+	/* Mobile: number and label side by side, numbers in a fixed column so labels align */
+	body.es-site .es-stat { flex-direction: row; align-items: center; gap: 16px; padding: 16px 4px; }
+	body.es-site .es-stat__v { flex: none; width: 92px; }
 	body.es-site .es-stat__v .elementor-heading-title { font-size: 48px; }
+	body.es-site .es-stat__l { flex: 1; min-width: 0; font-size: 14px; line-height: 1.4; }
 
 	body.es-site .es-wrap--reviews { padding: 72px var(--es-gutter); gap: 32px; }
 	body.es-site .es-rgrid { grid-template-columns: 1fr; gap: 14px; }
