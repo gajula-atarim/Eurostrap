@@ -523,21 +523,22 @@ body.es-site .es-fcol--brand { gap: 14px; }
 body.es-site .es-fcol--sub { gap: 12px; }
 body.es-site .elementor-widget.es-flogo { width: fit-content; background: #FFFFFF; padding: 12px 18px; border-radius: 10px; }
 body.es-site .es-flogo img { height: 60px; width: auto; max-width: none; }
-body.es-site .es-ftext { font-size: 14px; line-height: 1.55; color: #9A9A9A; }
-body.es-site .es-fhead .elementor-heading-title { font-size: 12px; color: var(--es-steel); }
+body.es-site .es-ftext { font-size: 14px; font-weight: 500; line-height: 1.55; color: #A6A6A6; }
+body.es-site .es-fhead .elementor-heading-title { font-size: 16px; font-weight: 700; line-height: 1.3; color: #FFFFFF; }
+body.es-site .es-fhead { margin-bottom: 4px; }
 body.es-site .es-fnav .hfe-nav-menu { display: flex !important; flex-direction: column; gap: 10px; }
 body.es-site .es-fnav .hfe-nav-menu li { width: auto !important; }
 body.es-site .es-fnav .hfe-nav-menu a.hfe-menu-item {
 	padding: 0 !important; margin: 0 !important; color: #E3E3E3 !important; background: none !important;
-	font-family: var(--es-roboto) !important; font-size: 14px !important; font-weight: 400 !important; line-height: 1.3 !important; letter-spacing: 0 !important; transition: color .25s ease;
+	font-family: var(--es-roboto) !important; font-size: 14px !important; font-weight: 600 !important; line-height: 1.3 !important; letter-spacing: 0 !important; transition: color .25s ease;
 }
 body.es-site .es-fnav .hfe-nav-menu a.hfe-menu-item:hover { color: #FFFFFF !important; }
 body.es-site .es-fnav .hfe-nav-menu__toggle { display: none !important; }
 body.es-site .es-fnav .hfe-nav-menu__layout-vertical, body.es-site .es-fnav .hfe-nav-menu { visibility: visible !important; opacity: 1 !important; height: auto !important; }
-body.es-site .es-fcontact { margin-top: 8px; font-size: 14px; line-height: 24px; color: #E3E3E3; }
+body.es-site .es-fcontact { margin-top: 8px; font-size: 14px; font-weight: 600; line-height: 24px; color: #E3E3E3; }
 body.es-site .es-fcontact a { color: #E3E3E3; }
 body.es-site .es-fcontact a:hover { color: #FFFFFF; }
-body.es-site .es-fsub__t .elementor-heading-title { color: #FFFFFF; font-weight: 700; font-size: 14px; }
+body.es-site .es-fsub__t .elementor-heading-title { color: #FFFFFF; font-weight: 700; font-size: 16px; line-height: 1.3; }
 body.es-site .es-wordmark { display: flex; flex-direction: row; align-items: center; gap: 24px; border-top: 1px solid #1E1E1E; padding-top: 48px; overflow: hidden; }
 body.es-site .es-wordmark__e { flex: none; width: 150px; }
 body.es-site .es-wordmark__e .elementor-heading-title {
@@ -545,13 +546,13 @@ body.es-site .es-wordmark__e .elementor-heading-title {
 	font-family: var(--es-bebas); font-size: 140px; letter-spacing: .01em; color: #FFFFFF; line-height: 1; padding-bottom: 14px;
 }
 body.es-site .es-wordmark__t .elementor-heading-title { font-family: var(--es-bebas); font-size: 200px; letter-spacing: .01em; line-height: .8; color: #FFFFFF; text-transform: uppercase; white-space: nowrap; }
-body.es-site .es-ftext--partners { color: #6B6B6B; font-size: 13px; }
-body.es-site .es-fmeta, body.es-site .e-con[class*="es-"] > .elementor-widget.es-fmeta { text-align: center; font-size: 12px; line-height: 1.6; color: var(--es-steel); margin-bottom: -52px; }
+body.es-site .es-ftext--partners { color: #8A8A8A; font-size: 13px; }
+body.es-site .es-fmeta, body.es-site .e-con[class*="es-"] > .elementor-widget.es-fmeta { text-align: center; font-size: 14px; font-weight: 500; line-height: 1.6; color: #8A8A8A; margin-bottom: -52px; }
 body.es-site .es-fmeta span { margin: 0 6px; color: #3A3A3A; }
 body.es-site .es-fmeta a { color: #9A9A9A; text-decoration: underline; text-underline-offset: 2px; }
 body.es-site .es-fmeta a:hover { color: #FFFFFF; }
-body.es-site .es-copy .hfe-copyright-wrapper { text-align: center; font-family: var(--es-roboto) !important; font-size: 12px !important; color: var(--es-steel) !important; }
-body.es-site .es-copy .hfe-copyright-wrapper * { color: var(--es-steel) !important; font-size: 12px !important; }
+body.es-site .es-copy .hfe-copyright-wrapper { text-align: center; font-family: var(--es-roboto) !important; font-size: 14px !important; font-weight: 500 !important; color: #8A8A8A !important; }
+body.es-site .es-copy .hfe-copyright-wrapper * { color: #8A8A8A !important; font-size: 14px !important; font-weight: 500 !important; }
 
 /* ---------------------------------------------------------------- Contact Form 7 */
 body.es-site .wpcf7 form { margin: 0; }

@@ -91,13 +91,13 @@ SPEC = [
  ('footer wrap', '.es-wrap--footer', {'padding-top':'80px','padding-bottom':'28px','row-gap':'64px'}),
  ('fgrid', '.es-fgrid', {'column-gap':'40px'}),
  ('flogo', '.es-flogo img', {'height':'60px'}),
- ('fnav link', '.es-fnav a.hfe-menu-item', {'font-size':'14px','color':'rgb(227, 227, 227)','padding-top':'0px'}),
- ('fhead', '.es-fhead '+H, {'font-size':'12px','color':'rgb(107, 107, 107)'}),
+ ('fnav link', '.es-fnav a.hfe-menu-item', {'font-size':'14px','font-weight':'600','color':'rgb(227, 227, 227)','padding-top':'0px'}),  # bold on client request
+ ('fhead', '.es-fhead '+H, {'font-size':'16px','font-weight':'700','color':'rgb(255, 255, 255)'}),  # enlarged on client request
  ('newsletter', '.es-nl', {'padding-top':'5px','border-top-left-radius':'12px'}),
  ('subscribe', '.es-newsletter input[type=submit]', {'background-color':'rgb(217, 48, 44)','font-size':'13px','font-weight':'700','border-top-left-radius':'8px'}),
  ('wordmark e', '.es-wordmark__e '+H, {'width':'150px','height':'150px','font-size':'140px','border-top-left-radius':'24px'}),
  ('wordmark', '.es-wordmark__t '+H, {'font-size':'200px'}),
- ('copyright', '.es-copy .hfe-copyright-wrapper', {'font-size':'12px'}),
+ ('copyright', '.es-copy .hfe-copyright-wrapper', {'font-size':'14px'}),  # enlarged on client request
 ]
 async def main():
     async with async_playwright() as p:
