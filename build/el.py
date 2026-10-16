@@ -121,7 +121,7 @@ def uae_nav(menu_slug, cls='', layout='horizontal'):
     }, cls)
 
 
-def uae_posts(count, cls=''):
+def uae_posts(count, cls='', read_more=''):
     return widget('hfe-basic-posts', {
         'posts_per_page': count,
         'columns': '3',
@@ -139,7 +139,8 @@ def uae_posts(count, cls=''):
         'show_comments': '',
         'meta_separator': '',
         'show_excerpt': '',
-        'show_read_more': '',
+        'show_read_more': 'yes' if read_more else '',
+        'read_more_text': read_more or 'Read More →',
     }, cls)
 
 

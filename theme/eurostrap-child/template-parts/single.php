@@ -43,6 +43,31 @@ while ( have_posts() ) :
 	</article>
 
 	<?php
+	$eurostrap_related = eurostrap_related_machines( $eurostrap_cats ? $eurostrap_cats[0]->slug : '' );
+	if ( $eurostrap_related ) :
+		?>
+	<section class="es-sec es-related">
+		<div class="es-wrap">
+			<div class="es-sechead">
+				<div class="es-kicker es-kicker--red"><div class="elementor-heading-title"><?php esc_html_e( 'RELATED MACHINES', 'eurostrap' ); ?></div></div>
+				<h2 class="es-h es-h--48"><span class="elementor-heading-title"><?php esc_html_e( 'Machines mentioned in this article', 'eurostrap' ); ?></span></h2>
+			</div>
+			<div class="es-rel">
+				<?php foreach ( $eurostrap_related as $eurostrap_m ) : ?>
+					<a class="es-mcard es-tilt" href="<?php echo esc_url( $eurostrap_m['url'] ); ?>">
+						<div class="es-mcard__media"><div class="es-mcard__img"><img src="<?php echo esc_url( $eurostrap_m['img'] ); ?>" alt="<?php echo esc_attr( $eurostrap_m['name'] ); ?>" loading="lazy"></div></div>
+						<div class="es-mcard__body">
+							<h3 class="es-mcard__title"><span class="elementor-heading-title"><?php echo esc_html( $eurostrap_m['name'] ); ?></span></h3>
+							<div class="es-mcard__price"><p><span><?php esc_html_e( 'Price', 'eurostrap' ); ?></span> <strong><?php esc_html_e( 'On request', 'eurostrap' ); ?> <em>→</em></strong></p></div>
+						</div>
+					</a>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</section>
+	<?php endif; ?>
+
+	<?php
 	$eurostrap_cta = get_page_by_path( 'articles' );
 	?>
 	<section class="es-sec es-cta">

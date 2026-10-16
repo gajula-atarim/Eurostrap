@@ -392,7 +392,7 @@ def articles_page():
                 con('es-news__head es-reveal',
                     heading('LATEST ARTICLES', 'div', 'es-kicker'),
                     heading('Expert packaging advice, machine guides, <span>and industry best practice</span>', 'h2', 'es-h es-h--44')),
-                uae_posts(12, 'es-articles es-articles--page')),
+                uae_posts(12, 'es-articles es-articles--page', read_more='Read article →')),
             tag='section', el_id='news'),
         cta_section('Have a question about your line?', 'Our specialists can help you choose the right machine, strap or film.', with_image=False),
     ]
@@ -434,6 +434,27 @@ def contact():
     ]
 
 
+# ---------------------------------------------------------------- privacy
+
+def privacy():
+    scope('privacy')
+    body = (
+        '<p>Eurostrap Packaging Systems Pty Ltd (ABN 49 105 977 151) respects your privacy. This page explains what information this website collects and how we use it.</p>'
+        '<h2>What we collect</h2>'
+        '<p>When you send an enquiry we collect the details you enter: your name, company, phone number, email address, the machine or service you are interested in and your message. When you subscribe to specials we collect your email address.</p>'
+        '<h2>How we use it</h2>'
+        '<p>We use these details only to respond to your enquiry, prepare quotes, arrange service and, if you subscribed, send you specials by email. We do not sell your details.</p>'
+        '<h2>Third-party services</h2>'
+        '<p>This site uses Google Maps to show our location and Google Fonts for typography. These services may receive your IP address when the page loads.</p>'
+        '<h2>Access and contact</h2>'
+        '<p>To ask what information we hold about you, correct it or unsubscribe, call (02) 4384 2567 or write to 5 Braemar Dr, Wamberal NSW 2260.</p>'
+    )
+    return [
+        page_hero('LEGAL', 'Privacy<br><span>policy</span>', 'How Eurostrap handles the information you share through this website.', 'warehouse-pallets', []),
+        con('es-sec es-legal', con('es-wrap es-wrap--legal', text(body, 'es-legaltext')), tag='section'),
+    ]
+
+
 # ---------------------------------------------------------------- header / footer
 
 def header():
@@ -458,7 +479,8 @@ def footer():
                 con('es-fgrid',
                     con('es-fcol es-fcol--brand',
                         img('eurostrap-logo', 'es-flogo', alt='Eurostrap', href='/'),
-                        text('<p>Specialists in all forms of End-Of-Line Load Securement and Packaging Solutions.</p>', 'es-ftext')),
+                        text('<p>Specialists in all forms of End-Of-Line Load Securement and Packaging Solutions.</p>', 'es-ftext'),
+                        text('<p>Exclusive distributor of Atlanta Stretch, Area Packaging and Messersi.</p>', 'es-ftext es-ftext--partners')),
                     con('es-fcol', heading('Solutions', 'div', 'es-fhead'), uae_nav('eurostrap-footer-solutions', 'es-fnav', 'vertical')),
                     con('es-fcol', heading('More', 'div', 'es-fhead'), uae_nav('eurostrap-footer-more', 'es-fnav', 'vertical')),
                     con('es-fcol',
@@ -471,6 +493,7 @@ def footer():
                 con('es-wordmark es-reveal',
                     heading('e', 'div', 'es-wordmark__e'),
                     heading('Eurostrap', 'div', 'es-wordmark__t')),
+                text('<p>5 Braemar Dr, Wamberal NSW 2260 <span>·</span> Mon–Fri 8:00am–5:00pm, Sat by appointment <span>·</span> ABN 49 105 977 151 <span>·</span> <a href="/privacy-policy/">Privacy policy</a></p>', 'es-fmeta'),
                 uae_copyright('© [hfe_current_year] Eurostrap Packaging Systems Pty Ltd. All rights reserved.', 'es-copy')),
             tag='footer'),
     ]
@@ -486,6 +509,7 @@ def main():
         {'key': 'machines', 'type': 'page', 'title': 'Machines', 'slug': 'machines', 'data': machines()},
         {'key': 'articles', 'type': 'page', 'title': 'Articles', 'slug': 'articles', 'data': articles_page()},
         {'key': 'contact', 'type': 'page', 'title': 'Contact', 'slug': 'contact', 'data': contact()},
+        {'key': 'privacy', 'type': 'page', 'title': 'Privacy Policy', 'slug': 'privacy-policy', 'data': privacy()},
     ]
     for c in CATEGORIES:
         docs.append({'key': 'cat-' + c['slug'], 'type': 'page', 'title': c['name'], 'slug': c['slug'],

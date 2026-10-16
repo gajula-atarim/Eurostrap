@@ -206,7 +206,15 @@ $es_save_doc = function ( $doc, $post_type, $parent = 0, $template = 'elementor_
 	if ( null === json_decode( $json ) ) {
 		throw new Exception( 'Invalid JSON for ' . $doc['key'] );
 	}
-	$id   = $es_find( $post_type, $doc['key'] );
+	$id = $es_find( $post_type, $doc['key'] );
+	if ( ! $id && 'page' === $post_type && ! empty( $doc['slug'] ) ) {
+		// Adopt an existing page with the same slug (e.g. WordPress's draft Privacy Policy).
+		$existing = get_page_by_path( $doc['slug'] );
+		if ( $existing && ! get_post_meta( $existing->ID, '_es_key', true ) ) {
+			$id = $existing->ID;
+			update_post_meta( $id, '_es_key', $doc['key'] );
+		}
+	}
 	$args = [
 		'post_type'    => $post_type,
 		'post_title'   => $doc['title'],
@@ -250,6 +258,9 @@ if ( $es_run( 'pages' ) ) {
 		$page_ids[ $doc['key'] ] = $es_save_doc( $doc, 'page', $page_ids[ $doc['parent'] ] ?? 0 );
 	}
 	update_option( 'es_pages', $page_ids );
+	if ( ! empty( $page_ids['privacy'] ) ) {
+		update_option( 'wp_page_for_privacy_policy', (int) $page_ids['privacy'] );
+	}
 	$es_log['pages'] = $page_ids;
 
 	// Remove the WordPress starter content on this fresh install.
@@ -424,6 +435,39 @@ if ( $es_run( 'settings' ) ) {
 	$es_log['settings'] = 'ok';
 }
 
+/* ------------------------------------------------------------------ Elementor kit: brand colours + type */
+if ( $es_run( 'kit' ) ) {
+	$kit_id = (int) get_option( 'elementor_active_kit' );
+	if ( $kit_id ) {
+		$ks = (array) get_post_meta( $kit_id, '_elementor_page_settings', true );
+		$ks['system_colors'] = [
+			[ '_id' => 'primary', 'title' => 'Eurostrap Red', 'color' => '#D9302C' ],
+			[ '_id' => 'secondary', 'title' => 'Charcoal', 'color' => '#4A4A4A' ],
+			[ '_id' => 'text', 'title' => 'Body Text', 'color' => '#5A5A5A' ],
+			[ '_id' => 'accent', 'title' => 'Accent Red', 'color' => '#D9302C' ],
+		];
+		$ks['custom_colors'] = [
+			[ '_id' => 'es_ink', 'title' => 'Ink', 'color' => '#141414' ],
+			[ '_id' => 'es_steel', 'title' => 'Steel Grey', 'color' => '#6B6B6B' ],
+			[ '_id' => 'es_blueprint', 'title' => 'Blueprint Grey', 'color' => '#E3E3E3' ],
+			[ '_id' => 'es_mist', 'title' => 'Mist', 'color' => '#F4F4F4' ],
+			[ '_id' => 'es_red_dark', 'title' => 'Red Hover', 'color' => '#B5231F' ],
+			[ '_id' => 'es_white', 'title' => 'White', 'color' => '#FFFFFF' ],
+		];
+		$type = function ( $id, $title, $family, $weight ) {
+			return [ '_id' => $id, 'title' => $title, 'typography_typography' => 'custom', 'typography_font_family' => $family, 'typography_font_weight' => $weight ];
+		};
+		$ks['system_typography'] = [
+			$type( 'primary', 'Headings (Bebas Neue)', 'Bebas Neue', '400' ),
+			$type( 'secondary', 'Subheadings (Roboto 500)', 'Roboto', '500' ),
+			$type( 'text', 'Body (Roboto 400)', 'Roboto', '400' ),
+			$type( 'accent', 'Buttons (Roboto 500)', 'Roboto', '500' ),
+		];
+		update_post_meta( $kit_id, '_elementor_page_settings', $ks );
+		$es_log['kit'] = $kit_id;
+	}
+}
+
 /* ------------------------------------------------------------------ flush */
 if ( $es_run( 'flush' ) ) {
 	if ( class_exists( '\Elementor\Plugin' ) ) {
@@ -432,6 +476,28 @@ if ( $es_run( 'flush' ) ) {
 	delete_transient( 'eurostrap_asset_urls' );
 	wp_cache_flush();
 	$es_log['flush'] = 'ok';
+}
+
+/* ------------------------------------------------------------------ snapshot (rendered pages for auditing) */
+if ( $es_run( 'snapshot' ) ) {
+	$up  = wp_upload_dir();
+	$dir = $up['basedir'] . '/es-audit';
+	wp_mkdir_p( $dir );
+	$pages = (array) get_option( 'es_pages', [] );
+	$urls  = [ 'home' => home_url( '/' ) ];
+	foreach ( [ 'about', 'machines', 'articles', 'contact', 'privacy', 'cat-wrapping-machines' ] as $k ) {
+		if ( ! empty( $pages[ $k ] ) ) {
+			$urls[ $k ] = get_permalink( $pages[ $k ] );
+		}
+	}
+	$post = get_page_by_path( 'choosing-a-semi-automatic-stretch-wrapper', OBJECT, 'post' );
+	if ( $post ) {
+		$urls['post'] = get_permalink( $post );
+	}
+	foreach ( $urls as $k => $u ) {
+		$r = wp_remote_get( add_query_arg( 'es_audit', time(), $u ), [ 'timeout' => 30, 'sslverify' => false ] );
+		$es_log['snapshot'][ $k ] = is_wp_error( $r ) ? $r->get_error_message() : file_put_contents( $dir . '/' . $k . '.html', wp_remote_retrieve_body( $r ) );
+	}
 }
 
 update_option( 'es_install_log', [ 'time' => current_time( 'mysql' ), 'stages' => $es_stages, 'log' => $es_log ], false );

@@ -36,6 +36,13 @@
    "file": "contact.json"
   },
   {
+   "key": "privacy",
+   "type": "page",
+   "title": "Privacy Policy",
+   "slug": "privacy-policy",
+   "file": "privacy.json"
+  },
+  {
    "key": "cat-wrapping-machines",
    "type": "page",
    "title": "Wrapping Machines",
