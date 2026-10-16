@@ -51,7 +51,15 @@ if ( $es_run( 'plugins' ) ) {
 			$up   = new Plugin_Upgrader( $skin );
 			$res  = $up->install( $link );
 			if ( true !== $res ) {
-				$res = ( new Plugin_Upgrader( $skin ) )->install( 'https://downloads.wordpress.org/plugin/' . $slug . '.latest-stable.zip' );
+				// Newest releases may need a newer PHP than the host runs: step back through known versions.
+				$fallbacks = 'contact-form-7' === $slug ? [ '6.1.4', '6.1.3', '6.1.1', '6.0.6', '5.9.8' ] : [];
+				foreach ( $fallbacks as $ver ) {
+					$res = ( new Plugin_Upgrader( $skin ) )->install( 'https://downloads.wordpress.org/plugin/' . $slug . '.' . $ver . '.zip' );
+					if ( true === $res ) {
+						$es_log['plugins'][ $slug . '_version' ] = $ver;
+						break;
+					}
+				}
 			}
 			$es_log['plugins'][ $slug ] = is_wp_error( $res ) ? $res->get_error_message() : $res;
 			$es_log['plugins'][ $slug . '_skin' ] = $skin->get_upgrade_messages();
