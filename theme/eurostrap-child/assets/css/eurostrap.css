@@ -851,8 +851,13 @@ body.elementor-editor-active.elementor-page .es-hero { min-height: 640px; }
 	body.es-site .es-hero { min-height: 600px; }
 	body.es-site .es-hero--page { min-height: 480px; }
 	body.es-site .es-hero__inner { padding-top: 118px; padding-bottom: 64px; }
-	body.es-site .es-hero__title .elementor-heading-title { font-size: 50px; white-space: normal; }
-	body.es-site .es-hero--page .es-hero__title .elementor-heading-title { font-size: 44px; }
+	body.es-site .es-hero__title .elementor-heading-title { font-size: min(50px, 15vw); white-space: normal; }
+	/* Red second line as its own block so it balances independently of the first */
+	body.es-site .es-hero__title .elementor-heading-title span { display: block; text-wrap: balance; }
+	body.es-site .es-hero--page .es-hero__title .elementor-heading-title { font-size: min(44px, calc(11vw - 1px)); }
+	/* Even out multi-line headings on phones so no word is left alone on the last line */
+	body.es-site .es-h .elementor-heading-title, body.es-site .es-hero__title .elementor-heading-title,
+	body.es-site .es-trust__lead .elementor-heading-title, body.es-site .es-icard__title, body.es-site .es-icard__title .elementor-heading-title { text-wrap: balance; }
 	body.es-site .es-hero__lead { font-size: 16px; }
 	body.es-site .es-hero__outline { display: none; }
 	body.es-site .es-hero__ctas { gap: 20px; padding: 6px 4px; }
