@@ -137,10 +137,10 @@ CATEGORIES = [
 ]
 
 INDUSTRIES = [
-    ('Food & beverage', 'Bottles, cans, cases and pallets', 'pexels-food'),
-    ('Manufacturing', 'Automated end-of-line cells', 'photos-robotic-palletising'),
-    ('Bagged goods', 'Bag filling to palletising', 'photos-bag-filling'),
-    ('Warehouse & logistics', 'Wrapping and strapping for dispatch', 'warehouse-pallets'),
+    ('Food & beverage', 'Bottles, cans, cases and pallets', 'pexels-food', '/machines/case-packing/'),
+    ('Manufacturing', 'Automated end-of-line cells', 'photos-robotic-palletising', '/machines/robotic-palletisers/'),
+    ('Bagged goods', 'Bag filling to palletising', 'photos-bag-filling', '/machines/bag-filling/'),
+    ('Warehouse & logistics', 'Wrapping and strapping for dispatch', 'warehouse-pallets', '/machines/wrapping-machines/'),
 ]
 
 STATS = [('20', '+', 'Years in load securement'), ('7', '', 'Supplier brands'), ('10', '', 'End-of-line solution areas')]

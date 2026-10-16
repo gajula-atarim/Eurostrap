@@ -169,8 +169,8 @@ def home():
                             heading(t, 'div', 'es-tile__t'),
                             text(f'<p>{d}</p>', 'es-tile__d')),
                         heading('→', 'div', 'es-tile__arrow'),
-                        href='/contact/')
-                    for i, (t, d, key) in enumerate(INDUSTRIES)]),
+                        href=url)
+                    for i, (t, d, key, url) in enumerate(INDUSTRIES)]),
                 btn('View industry use cases', '/contact/', 'red')),
             tag='section'),
 
@@ -222,15 +222,15 @@ def about():
         ('Local + European', 'Australian owned and supported, backed by Italian engineering partners.'),
     ]
     partners = [
-        ('Atlanta Stretch', 'suppliers-atlanta', 'Stretch wrapping', 'Pallet wrappers from mobile robots such as the Atlanta Sfera to fully automatic ring and rotary arm machines, plus Atlanta case packers.'),
-        ('Area Packaging', 'suppliers-area', 'Horizontal wrapping', 'Horizontal and orbital stretch wrapping machines for long products, profiles, panels and bundles.'),
-        ('Messersi', None, 'Strapping', 'Pallet and bundle strapping systems built around the Messersi MS300 head, running PP and PET strap.'),
+        ('Atlanta Stretch', 'suppliers-atlanta', 'Stretch wrapping', 'Pallet wrappers from mobile robots such as the Atlanta Sfera to fully automatic ring and rotary arm machines, plus Atlanta case packers.', '/machines/wrapping-machines/'),
+        ('Area Packaging', 'suppliers-area', 'Horizontal wrapping', 'Horizontal and orbital stretch wrapping machines for long products, profiles, panels and bundles.', '/machines/wrapping-machines/#horizontal'),
+        ('Messersi', None, 'Strapping', 'Pallet and bundle strapping systems built around the Messersi MS300 head, running PP and PET strap.', '/machines/strapping/'),
     ]
     rng = [
-        ('01', 'Hand tools', 'Battery and manual strapping tools and hand stretch film for low volumes.'),
-        ('02', 'Semi-automatic', 'Turntable and self-propelled wrappers, semi-auto strappers and case sealers.'),
-        ('03', 'Fully automatic', 'In-line, high-speed wrapping, strapping, hooding and case packing.'),
-        ('04', 'Turn-key systems', 'Complete end-of-line design and integration, from bag filling to dispatch.'),
+        ('01', 'Hand tools', 'Battery and manual strapping tools and hand stretch film for low volumes.', '/machines/strapping/'),
+        ('02', 'Semi-automatic', 'Turntable and self-propelled wrappers, semi-auto strappers and case sealers.', '/machines/wrapping-machines/#semi-automatic'),
+        ('03', 'Fully automatic', 'In-line, high-speed wrapping, strapping, hooding and case packing.', '/machines/wrapping-machines/#automatic-in-line'),
+        ('04', 'Turn-key systems', 'Complete end-of-line design and integration, from bag filling to dispatch.', '/machines/consultation-and-design/'),
     ]
     service = [
         ('Installation & commissioning', 'Our technicians install, commission and set up every machine we supply, then train your operators.'),
@@ -269,12 +269,14 @@ def about():
                 sechead('03 — PARTNERS', 'Exclusive distributor partnerships',
                         'Proven European machines, sold, installed and supported by a local Australian team.', kicker_cls='es-kicker es-kicker--red'),
                 con('es-pgrid', *[
-                    con('es-pcard es-reveal',
+                    con('es-pcard es-cardlink es-reveal',
                         con('es-pcard__logo', img(logo, 'es-pcard__img', alt=n) if logo else heading(n, 'div', 'es-pcard__wordmark')),
                         heading(tag, 'div', 'es-label'),
                         heading(n, 'h3', 'es-pcard__t'),
-                        text(f'<p>{d}</p>', 'es-pcard__d'))
-                    for n, logo, tag, d in partners])),
+                        text(f'<p>{d}</p>', 'es-pcard__d'),
+                        heading('View machines →', 'div', 'es-textlink'),
+                        href=url)
+                    for n, logo, tag, d, url in partners])),
             tag='section'),
 
         con('es-sec es-range',
@@ -283,12 +285,13 @@ def about():
                 con('es-range__body',
                     sechead('04 — THE RANGE', 'From hand tools to turn-key systems', center=False, kicker_cls='es-kicker es-kicker--red'),
                     con('es-steps', *[
-                        con('es-step es-reveal',
+                        con('es-step es-cardlink es-reveal',
                             heading(n, 'div', 'es-step__n'),
                             con('es-step__body',
                                 heading(t, 'h3', 'es-step__t'),
-                                text(f'<p>{d}</p>', 'es-step__d')))
-                        for n, t, d in rng]),
+                                text(f'<p>{d}</p>', 'es-step__d')),
+                            href=url)
+                        for n, t, d, url in rng]),
                     btn('Explore the machines', '/machines/', 'red'))),
             tag='section'),
 
