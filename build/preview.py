@@ -18,6 +18,7 @@ SHIM = """
  position:relative;width:var(--width);gap:var(--gap);padding:var(--padding-top,0) var(--padding-right,0) var(--padding-bottom,0) var(--padding-left,0);
  flex-wrap:var(--flex-wrap,nowrap)}
 .e-con>.elementor-widget{max-width:100%}
+.elementor.elementor .e-con>.elementor-widget{max-width:100%}
 .e-con[data-dir=row]{--flex-direction:row}
 .elementor-widget{position:relative}
 .elementor-widget-image{text-align:center}

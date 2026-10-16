@@ -576,6 +576,14 @@ body.es-site .es-formfoot__note { font-size: 13px; color: var(--es-grey); }
 body.es-site .es-form .wpcf7-not-valid-tip { font-size: 12px; margin-top: 6px; color: var(--es-red); }
 body.es-site .es-form .wpcf7-response-output { margin: 18px 0 0 !important; padding: 12px 16px !important; border-radius: 6px; font-size: 14px; }
 
+/* Elementor caps widgets with `.elementor.elementor .e-con > .elementor-widget { max-width: 100% }`;
+   restate the design widths at a higher specificity. */
+body.es-site .elementor .e-con > .elementor-widget.es-lead { max-width: 520px; }
+body.es-site .elementor .e-con > .elementor-widget.es-hero__lead { max-width: 440px; }
+body.es-site .elementor .es-hero--page .e-con > .elementor-widget.es-hero__lead { max-width: 520px; }
+body.es-site .elementor .e-con > .elementor-widget.es-trust__copy { max-width: 500px; }
+body.es-site .elementor .e-con > .elementor-widget.es-specs--wide { max-width: 420px; }
+
 /* ---------------------------------------------------------------- inner pages */
 body.es-site .es-wrap--split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
 body.es-site .es-split__left { display: flex; flex-direction: column; gap: 14px; }
