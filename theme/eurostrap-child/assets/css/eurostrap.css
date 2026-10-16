@@ -137,7 +137,7 @@ body.es-site .es-underline .elementor-button:hover { color: #FFFFFF; border-colo
 /* ---------------------------------------------------------------- header (UAE template) */
 body.es-site #masthead, body.es-site header.site-header { position: static; height: 0; padding: 0; margin: 0; }
 body.es-site .es-header {
-	position: fixed; top: var(--es-header-top); left: 50%; transform: translateX(-50%); z-index: 100;
+	position: absolute; top: var(--es-header-top); left: 50%; transform: translateX(-50%); z-index: 100;
 	width: min(1280px, calc(100% - 64px)); display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 24px;
 	padding: 8px; border-radius: 16px;
 	background: rgba(20, 20, 20, .28);

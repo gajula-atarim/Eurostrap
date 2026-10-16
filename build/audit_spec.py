@@ -3,7 +3,7 @@ from playwright.async_api import async_playwright
 # (label, css selector, {prop: expected}) — values from "03 Eurostrap Home.dc.html"
 H='.elementor-heading-title'
 SPEC = [
- ('header box', '.es-header', {'top':'18px','border-top-left-radius':'16px','padding-top':'8px','background-color':'rgba(20, 20, 20, 0.28)','position':'fixed','width':'1280px'}),
+ ('header box', '.es-header', {'top':'18px','border-top-left-radius':'16px','padding-top':'8px','background-color':'rgba(20, 20, 20, 0.28)','position':'absolute','width':'1280px'}),
  ('logo plate', '.es-logo .hfe-site-logo-set', {'background-color':'rgb(255, 255, 255)','border-top-left-radius':'10px','padding-top':'8px','padding-left':'16px'}),
  ('logo img', '.es-logo img', {'height':'52px'}),
  ('nav ul', '.es-nav ul.hfe-nav-menu', {'column-gap':'36px'}),
