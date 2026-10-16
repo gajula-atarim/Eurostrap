@@ -498,7 +498,7 @@ def footer():
                 con('es-wordmark es-reveal',
                     heading('e', 'div', 'es-wordmark__e'),
                     heading('Eurostrap', 'div', 'es-wordmark__t')),
-                text('<p>5 Braemar Dr, Wamberal NSW 2260 <span>·</span> Mon–Fri 8:00am–5:00pm, Sat by appointment <span>·</span> ABN 49 105 977 151 <span>·</span> <a href="/privacy-policy/">Privacy policy</a></p>', 'es-fmeta'),
+                text('<p><span class="es-fm">5 Braemar Dr, Wamberal NSW 2260</span> <span class="es-fsep">·</span> <span class="es-fm">Mon–Fri 8:00am–5:00pm, Sat by appointment</span> <span class="es-fsep">·</span> <span class="es-fm">ABN 49 105 977 151</span> <span class="es-fsep">·</span> <span class="es-fm"><a href="/privacy-policy/">Privacy policy</a></span></p>', 'es-fmeta'),
                 uae_copyright('© [hfe_current_year] Eurostrap Packaging Systems Pty Ltd. All rights reserved.', 'es-copy')),
             tag='footer'),
     ]
