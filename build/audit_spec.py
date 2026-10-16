@@ -36,6 +36,7 @@ SPEC = [
  ('mcard body', '.es-mcard.is-shown .es-mcard__body', {'padding-top':'18px','row-gap':'11px'}),
  ('mcard title', '.es-mcard.is-shown .es-mcard__title '+H, {'font-size':'20px'}),
  ('spec row', '.es-mcard.is-shown .es-specs p', {'font-size':'13px'}),
+ ('spec row gap', '.es-mcard.is-shown .es-specs p + p', {'margin-top':'6px'}),
  ('explore title', '.es-explore__title '+H, {'font-size':'22px','font-weight':'600'}),
  ('sq btn', '.es-sq .elementor-button', {'width':'48px','height':'48px'}),
  ('view all', '.es-btn-rect .elementor-button', {'padding-top':'14px','padding-left':'22px','font-weight':'700'}),

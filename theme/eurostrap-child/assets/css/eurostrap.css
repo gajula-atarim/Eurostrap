@@ -85,7 +85,7 @@ body.es-site .es-textlink .elementor-heading-title a:hover { color: var(--es-red
 
 /* Spec rows (text editor: <p><span>Key</span> <strong>Value</strong></p>) */
 body.es-site .es-specs p { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; line-height: 1.35; }
-body.es-site .es-specs p + p { margin-top: 6px; }
+body.es-site .es-specs.elementor-widget-text-editor p + p { margin-top: 6px; }
 body.es-site .es-specs span { color: var(--es-grey); }
 body.es-site .es-specs strong { font-weight: 600; text-align: right; color: var(--es-ink); }
 
@@ -484,8 +484,7 @@ body.es-site .es-articles .hfe-read-more:hover { color: var(--es-red-dark) !impo
 body.es-site .es-wrap--legal { max-width: 860px; }
 body.es-site .es-legaltext { font-size: 17px; line-height: 1.7; color: #3F3F3F; }
 body.es-site .es-legaltext h2 { font-family: var(--es-bebas); font-weight: 400; font-size: 34px; line-height: 1; text-transform: uppercase; color: var(--es-ink); margin: 40px 0 14px; }
-body.es-site .es-legaltext p + p { margin-top: 0; }
-body.es-site .es-legaltext p { margin: 0 0 18px; }
+body.es-site .es-legaltext.elementor-widget-text-editor p { margin: 0 0 18px; }
 
 /* Related machines on single articles */
 body.es-site .es-related { background: var(--es-mist); }
