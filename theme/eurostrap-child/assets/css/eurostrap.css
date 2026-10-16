@@ -656,6 +656,15 @@ body.es-site .es-icard__media { height: 220px; background: var(--es-blueprint); 
 body.es-site .es-icard__body { padding: 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
 body.es-site .es-icard__title .elementor-heading-title { font-family: var(--es-bebas); font-size: 24px; line-height: 1.05; text-transform: uppercase; color: var(--es-ink); letter-spacing: .01em; }
 body.es-site .es-icard .es-textlink { margin-top: auto; padding-top: 6px; }
+/* Whole-card link: the title link's ::after covers the card; Enquire sits above it. */
+body.es-site .es-icard--link { position: relative; cursor: pointer; }
+body.es-site .es-icard--link .es-icard__body, body.es-site .es-icard--link .es-icard__title { position: static; }
+body.es-site .es-icard--link .es-icard__title a { color: inherit; }
+body.es-site .es-icard--link .es-icard__title a::after { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+body.es-site .es-icard--link:hover .es-icard__title .elementor-heading-title { color: var(--es-red); }
+body.es-site .es-icard--link .es-icard__title .elementor-heading-title { transition: color .25s ease; }
+body.es-site .es-icard--link .es-textlink { position: relative; z-index: 2; }
+body.es-site .es-icard--link:focus-within { outline: 2px solid var(--es-red); outline-offset: 3px; }
 body.es-site .es-rel { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
 body.es-site .es-machines--related { background: #FFFFFF; border-top: 1px solid #EFEFEF; }
 

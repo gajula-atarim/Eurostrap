@@ -61,14 +61,16 @@ def machine_card(c):
         href=cat_url(c))
 
 
-def item_card(c, item):
+def item_card(c, item, link=None):
+    """Machine card. With `link`, the title links there and covers the whole card
+    (stretched link), leaving the Enquire link clickable on top."""
     name, op, specs, anchor = item
     return con(
-        'es-icard es-reveal',
+        'es-icard es-reveal' + (' es-icard--link' if link else ''),
         con('es-icard__media', img(c['img'], 'es-icard__img', alt=name)),
         con('es-icard__body',
             heading(f"{c['brand']} · {op}", 'div', 'es-label'),
-            heading(name, 'h3', 'es-icard__title'),
+            heading(name, 'h3', 'es-icard__title', href=link),
             text(specs_html(specs), 'es-specs'),
             heading('Enquire about this machine →', 'div', 'es-textlink', href='/contact/#enquiry')),
         el_id=anchor or None)
@@ -327,7 +329,7 @@ def machines():
                     con('es-cat__intro',
                         text(f"<p><strong>{c['lead']}.</strong> {c['intro']}</p>", 'es-body es-body--16'),
                         heading(f"View {c['name'].lower()} →", 'div', 'es-textlink', href=cat_url(c)))),
-                con('es-igrid4', *[item_card(c, it) for it in c['items']])),
+                con('es-igrid4', *[item_card(c, it, cat_url(c) + (f"#{it[3]}" if it[3] else '')) for it in c['items']])),
             tag='section', el_id=c['slug']))
     return [
         page_hero('THE MACHINE RANGE', 'Machines for<br><span>every end-of-line</span>',
